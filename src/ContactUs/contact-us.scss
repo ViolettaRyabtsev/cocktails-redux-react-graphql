@@ -1,0 +1,70 @@
+
+
+.contact-us-container{
+    font-family: 'Libre Bodoni', serif;
+    margin: 0;
+    margin-top: 250px;
+    background-image: url("../../public/rosmary.jpg");
+    background-attachment:scroll;
+    background-position: top;
+    height: 250vh;
+    opacity: 0.8;
+    background-size: cover;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+grid-template-rows: 15% 15%; 
+
+    .text-container{
+margin-left: 100px;
+grid-column-start: 1;
+grid-row-start: 1;
+font-family: 'Libre Bodoni', serif;
+p{
+    font-size: 20px;
+}
+
+    }
+
+    .form-container{
+        font-family: 'Libre Bodoni', serif;
+        grid-column-start: 2;
+        grid-row-start: 2;
+
+form{
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 70px 300px 50px;
+    justify-content: center;
+
+    input{
+        margin: 10px;
+        border: none;
+    }
+    .input-body{
+margin: 10px;
+grid-column-start: 1;
+grid-column-end: 3;
+border: none;
+
+    }
+
+    button{
+        grid-row-start: 3;
+        grid-column-start: 2;
+        border-radius: 30px;
+        width: 130px;
+       background-color: black;
+       color: aliceblue;
+       font-family: 'Libre Bodoni', serif;
+       font-size: 18px;
+       border: none;
+       margin-left: 110px;
+    }
+}
+
+
+
+    }
+}
+
