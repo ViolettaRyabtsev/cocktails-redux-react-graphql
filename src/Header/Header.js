@@ -1,7 +1,7 @@
 import "./top-header.scss";
 import { Outlet, Link } from "react-router-dom";
 import styled from "styled-components";
-
+import { useRef } from "react";
 export const NavLink = styled(Link)`
   padding: 5px 5px;
   cursor: pointer;
@@ -10,6 +10,13 @@ export const NavLink = styled(Link)`
 `;
 
 const TopHeader = () => {
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="top-header-container">
       <div className="logo"> Find Your Perfect Recipe</div>

@@ -1,5 +1,5 @@
 import "./body-menu.scss";
-
+import { useRef } from "react";
 const data = [
   "Easy Rum Cocktails",
   "Easy Gin Cocktails",
@@ -13,6 +13,7 @@ const data = [
 ];
 
 const BodyMenu = () => {
+  const menu = useRef(null);
   return (
     <div className="body-container">
       <div className="body-img">
@@ -67,7 +68,7 @@ const BodyMenu = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </h4>
 
-        <div className="menu-container">
+        <div ref={menu} className="menu-container">
           {data.map((name) => (
             <div className="menu-container-img">
               <img src="../idrink-64.png" alt="logo-cocktail"></img>
