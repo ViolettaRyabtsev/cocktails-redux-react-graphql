@@ -7,11 +7,10 @@ import Home from "./Home";
 import { Routes, Route } from "react-router-dom";
 import Recipes from "./routes/recipes/Recipes";
 import { useQuery, gql } from "@apollo/client";
-
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "./state/index";
-
+import { useRef } from "react";
 export const GET_COCKTAILS = gql`
   query {
     cocktailList {
@@ -43,12 +42,12 @@ function App() {
 
   return (
     <div className="App">
-      <TopHeader />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/recipes" element={<Recipes />}></Route>
+        <Route path="/" element={<TopHeader />}>
+          <Route index element={<Home />} />
+          <Route path="/recipes" element={<Recipes />}></Route>
+        </Route>
       </Routes>
-
       <Footer />
     </div>
   );

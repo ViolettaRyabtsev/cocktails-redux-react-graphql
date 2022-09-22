@@ -1,5 +1,11 @@
 import "./body-menu.scss";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useInView } from "react-intersection-observer";
+
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../state/index";
+
 const data = [
   "Easy Rum Cocktails",
   "Easy Gin Cocktails",
@@ -12,8 +18,37 @@ const data = [
   "Beach Cocktails",
 ];
 
-const BodyMenu = () => {
-  const menu = useRef(null);
+const BodyMenu = ({ forwardRef }) => {
+  //pass refernce to home component
+
+  //pass to app component
+
+  // //visible element
+
+  // const [myElementIsVisiable, setMyElementIsVisible] = useState();
+  // console.log(store.clickOnMenu);
+  // console.log(myElementIsVisiable, "visible");
+  // const dispatch = useDispatch();
+
+  // const { setClickOnMenu } = bindActionCreators(actionCreators, dispatch);
+
+  // console.log(myRef.current, "ref");
+
+  // const observer = new IntersectionObserver((entries) => {
+  //   const entry = entries[0];
+
+  //   setMyElementIsVisible(entry.isIntersecting);
+  // });
+
+  // observer.observe(myRef.current);
+
+  // if (myElementIsVisiable === false) {
+  //   setClickOnMenu({ setClick: false });
+  // }
+  // if (store.clickOnMenu.clickOnMenu) {
+  //   console.log(store.clickOnMenu, "is it true?");
+  //   myRef.current.scrollIntoView({ behavior: "smooth" });
+
   return (
     <div className="body-container">
       <div className="body-img">
@@ -68,7 +103,7 @@ const BodyMenu = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </h4>
 
-        <div ref={menu} className="menu-container">
+        <div ref={forwardRef} className="menu-container">
           {data.map((name) => (
             <div className="menu-container-img">
               <img src="../idrink-64.png" alt="logo-cocktail"></img>

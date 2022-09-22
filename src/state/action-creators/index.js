@@ -6,3 +6,12 @@ export const setCocktailList = (array) => {
     });
   };
 };
+
+export const setClickOnMenu = (boolean) => {
+  return (dispatch) => {
+    dispatch({
+      type: "SET_CLICK_ON_MENU",
+      payload: boolean,
+    });
+  };
+};
